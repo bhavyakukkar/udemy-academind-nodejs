@@ -32,6 +32,7 @@ const requestHandler = (req, res) => {
             });
         });
     }
+    
     //Construct Response
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
