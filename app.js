@@ -2,13 +2,15 @@ const express = require('express');
 
 const app = express();
 
-app.use((req, res, next) => {
-    console.log("in the middleware");
+app.use('/', (req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    console.log("in another middleware");
+app.use('/one', (req, res, next) => {
+    res.send('<h1>one</h1>');
+});
+
+app.use('/', (req, res, next) => {
     res.send('<h1>hhh</h1>');
 });
 
