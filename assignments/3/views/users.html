@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="/css/users.css">
+    <script defer src="/js/user-adder.js"></script>
+</head>
+<body>
+    <div class="container flex-v">
+
+        <div class="nav flex-h">
+            <a class="nav-link big" href="/">Home</a>
+            <a class="nav-link big selected" href="/users">Users</a>
+        </div>
+        
+        <div class="main flex-v">
+            <p class="big">Welcome to the Users Page</p>
+            <p class="small">Users:</p>
+            <div id="users" class="list flex-v">
+                <p class="item">User 1</p>
+                <p class="item">User 2</p>
+                <p class="item">User 3</p>
+            </div>
+            <div class="flex-h">
+                <button class="big" onclick="addUser()">+</button>
+                <button class="big" onclick="removeUser()">-</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
