@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { resolve } = require('path');
 const path = require('path');
 
 module.exports = class Product {
@@ -14,17 +15,25 @@ module.exports = class Product {
                 products = JSON.parse(fileContent);
             }
             products.push(this);
-            fs.writeFile(p, JSON.stringify(products), err => console.log(err));
+            fs.writeFile(p, JSON.stringify(products), (err) => {
+                if (err) {
+                    console.log(err);
+                }
+            });
         });
     }
 
     static fetchAll() {
-        const p = path.join(path.dirname(require.main.filename), 'data', 'products.json');
-        fs.readFile(p, (err, fileContent) => {
-            if (err) {
-                return [];
-            }
-            return JSON.parse(fileContent);
+        return new Promise((resolve, reject) => {
+            const p = path.join(path.dirname(require.main.filename), 'data', 'products.json');
+            fs.readFile(p, (err, fileContent) => {
+                if (err) {
+                    resolve([]);
+                }
+                else {
+                    resolve(JSON.parse(fileContent));
+                }
+            });
         });
     }
 }
