@@ -1,0 +1,13 @@
+extends layouts/main-layout
+
+block styles 
+    link(rel="stylesheet" href="/css/home.css")
+
+block content 
+    form(action="/add-user" method="POST")
+        label(for="username") Enter your username:
+        br
+        input(type="text" name="username")
+        br
+        br
+        input(type="submit") 

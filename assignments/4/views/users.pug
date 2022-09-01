@@ -1,0 +1,12 @@
+extends layouts/main-layout
+
+block styles 
+    link(rel="stylesheet" href="/css/users.css")
+
+block content 
+    if userLibrary.length > 0
+        ul.users
+            each username in userLibrary
+                li.user #{username}
+    else 
+        h2 No Users Yet
