@@ -1,4 +1,5 @@
-const products = [];
+const fs = require('fs');
+const path = require('path');
 
 module.exports = class Product {
     constructor(title) {
@@ -6,6 +7,7 @@ module.exports = class Product {
     }
 
     save() {
+        const p = path.join(path.dirname(require.main.filename), 'data', 'products');
         products.push(this);
     }
 
