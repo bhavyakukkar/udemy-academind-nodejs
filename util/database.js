@@ -1,4 +1,4 @@
-const Sequelize = require('sequalize');
+const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('node-complete', 'test', 'Strong34S;#', {
     dialect: 'mysql',
